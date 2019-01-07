@@ -3,4 +3,4 @@ Implementation of the MultiAgent Reinforcement Learning Algorithm
 
 
 
-![](images/agent_max.gif)
+![](gifs/1.218.gif)
