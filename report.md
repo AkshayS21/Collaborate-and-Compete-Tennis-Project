@@ -98,22 +98,22 @@ On a side note, the average score per 100 episodes for solving this environemnt 
 
 In the plot above, we see that the maximum average score per 100 episodes was +1.969. But the algorithm crashes right after achieving this score. When I assigned the weights corresponding to this score to the agents and ran 5 episodes, I got a very fluctuating mean score as seen below. The benchmark score of +2.5 was never reached.
 
-![](images/1.969.JPG)
+![](images/1.969.PNG)
 
 We can see in the plot that the algorithm fluctuates between approximately 1 and 1.5 from episodes 3800 to 5000. The algorithm never stayes stable at 1 or 1.5 but fluctuates in between these scores. This means that it is stable somewhere in between these scores. This can be verified from the mean scores below.
 
 Evaluation of weights corresponding to +1.595.
 
-![](images/1.595.JPG)
+![](images/1.595.PNG)
 
 Evaluation of weights corresponding to +1.002.
 
-![](images/1.002.JPG)
+![](images/1.002.PNG)
 
 As we can see, the weight above exceed the benchmark mean scores per episode of +2.5 but they are not consistent.
 Hence in order to find the stable weights, I looked for weights corresponding to a score that is around the mean of 1 and 1.5. The closest weights were those corresponding to score of +1.218. Following was their evaluation result.
 
-![](images/1.218.JPG)
+![](images/1.218.PNG)
 
 The mean episode score consistently exceeded +2.5. So we can conclude that the corresponding weights are stable and can be used for the environment. Following is their performance,
 
@@ -121,24 +121,19 @@ Stable +1.218
 
 ![](gifs/1.218.gif)
 
-Less Stable +1.595
 
-![](gifs/1.595.gif)
-
-
-Less Stable +1.002
-
-![](gifs/1.002.gif)
-
-
-Unstable +1.969
-
-![](gifs/1.969.gif)
-
-The evaluation codes can be found in the file Tennis_Evaluate.ipynb.
+The evaluation codes can be found in the file Tennis_Evaluate.ipynb. All weights can be found in the weights folder.
 
 
 ### Ideas for Future
+
+- Combination of traning steps and update frequency - I would like to try out different combinations of the max steps per episode and     the update frequency to see if it generates a higher and stable score.
+
+- Evaluate weights against another brain of the same environment - Currently the agents' objective is to balance the ball as long as       possible. But I would like to try out the trained weights against another brain ans see how it performs.
+
+- I will also try to implement a MultiAgent version of the PPO algorithm and make it work.
+
+- Solve the Soccer environment.
 
 
 
