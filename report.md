@@ -1,15 +1,17 @@
-#                                                          Report
+# Collaborate and Compete – Tennis Project
 
-#                              Collaborate and Compete – Tennis Project
-
-##                Implementation of the Multi-Agent Reinforcement Learning Algorithm
+## Implementation of the Multi-Agent Reinforcement Learning Algorithm
 
 
-### Networks
+### 1.Networks
 
 Actor model:
 
 ![](images/actor_model.PNG)
+
+Critic MOdel
+
+![](images/critic_model.JPG)
 
 
 
