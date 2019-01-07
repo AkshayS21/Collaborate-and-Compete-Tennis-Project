@@ -61,22 +61,26 @@ The OU Noise that is usually added to actions to generate more random states was
 
 ### Attempts
 
-1. In the first attempt, I set the randomness to 100% for first 1000 episodes and 50% until 2000 episodes, updated the networks every 2 time steps and didn't set any limit on the number of steps per episode. The result was as follows,
+1. In the first attempt, I set the randomness to 100% for first 1000 episodes and 50% until 2000 episodes, updated the networks every 2 time steps and didn't set any limit on the number of time steps per episode. The result was as follows,
 
 ![](images/first.JPG)
 
-The environment was solved but was unstable. The maximum average score per 100 episode was +0.543.
+The environment was solved but was unstable. The maximum average score per 100 episodes was +0.543.
 
-2. In the scond attempt, I kept all parameters the same but updated the networks every time step. As expected, the environment was solved with much higher score, but was also more unstable.
+2. In the scond attempt, I kept all parameters the same but updated the networks every time step. 
 
 ![](images/second.JPG)
 
+As expected, the environment was solved with much higher score, but was also more unstable.The maximum average score per 100 episodes was +0.890.
+
+3. In the third attempt, in order to make the algorithm more stable, I decided to update the networks less often. Hence I updated the network every 2 time steps and limited the number of time steps per episode to 1000. To compensate for less often training, I increased the exploratory characteristics of the agents by selecting actions with 100% randomness for first 1500 epsiodes and 50% from thereafter until 2500 episodes. The results were as follows,
+
+![](images/third.JPG)
 
 
+### Evaluation
 
-third - randomness, 1000 steps, update every 2 steps, stable and final
 
-### Evaluate 
  the stable model, decide why chosen , show gifs.
  
  ### Future work
