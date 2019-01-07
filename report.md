@@ -37,18 +37,13 @@ Each DDPG agent updates its local actor and critic networks during every update 
     Hence Q_next acts like the cumulative reward for next_states.
    
 - Training the critic_local model:
-  - states and actions sampled are concatenated and fed to the current version of critic_local model of agent_0 to predict Q_expected  
-    for states.
-  - The critic_local model of agent_0 is then trained such that Q_expected matches the Advantage function. The difference in their  
-    values is computed as the mean squared error loss and the critic_local network is optimized using Adam optimizer.
+  - states and actions sampled are concatenated and fed to the current version of critic_local model of agent_0 to predict Q_expected       for states.
+  - The critic_local model of agent_0 is then trained such that Q_expected matches the Advantage function. The difference in their           values is computed as the mean squared error loss and the critic_local network is optimized using Adam optimizer.
     
 - Training the actor_local model:
-  - The sampled states for both agents are fed to their current version of the actor_local model to predict actions,say actions_pred,  
-    for both agents.
-  - These actions_pred are concatenated with states and fed to the current version of critic_local model of agent_0 to compute   
-    Q_current.
-  - The actor_local model of agent_0 is then optimized by minimizing the value -1* Q_current, in other words by maximizing Q_current. 
-    Again I used Adam optimizer.
+  - The sampled states for both agents are fed to their current version of the actor_local model to predict actions,say actions_pred,       for both agents.
+  - These actions_pred are concatenated with states and fed to the current version of critic_local model of agent_0 to compute               Q_current.
+  - The actor_local model of agent_0 is then optimized by minimizing the value -1* Q_current, in other words by maximizing Q_current.       Again I used Adam optimizer.
     
 - Soft Updating the Target Networks:
 
