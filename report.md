@@ -54,12 +54,25 @@ Each DDPG agent updates its local actor and critic networks during every update 
   
 The same steps are followed for the second agent as well.
 
+### Randomness
+
+The OU Noise that is usually added to actions to generate more random states wasn't exploratory enough for this environment. Hence I made the actions 100% random by modifying a uniform distribution (0,1] to (-1 ,1] and randomly sampling actions from this distribution. This helped generate random consecutive states and made the algorithm much more exploratory.
+
 
 ### Attempts
 
-first - OU Noise plus randomness, unlimited steps, update every 2 steps, solved but unstable.
+1. In the first attempt, I set the randomness to 100% for first 1000 episodes and 50% until 2000 episodes, updated the networks every 2 time steps and didn't set any limit on the number of steps per episode. The result was as follows,
 
-second - added randomness, unlimited steps, update every 1 step, solved, max score 0.89 but no stable score
+![](images/first.JPG)
+
+The environment was solved but was unstable. The maximum average score per 100 episode was +0.543.
+
+2. In the scond attempt, I kept all parameters the same but updated the networks every time step. As expected, the environment was solved with much higher score, but was also more unstable.
+
+![](images/second.JPG)
+
+
+
 
 third - randomness, 1000 steps, update every 2 steps, stable and final
 
