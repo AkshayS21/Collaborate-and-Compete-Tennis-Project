@@ -9,9 +9,9 @@ Actor model:
 
 ![](images/actor_model.PNG)
 
-Critic MOdel
+Critic Model:
 
-![](images/critic_model.JPG)
+![](images/critic_model.PNG)
 
 
 
