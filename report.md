@@ -9,7 +9,7 @@
 
 Actor model:
 
-![](images/actor_model.png)
+![](images/actor_model.PNG)
 
 
 
