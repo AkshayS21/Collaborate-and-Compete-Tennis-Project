@@ -18,7 +18,7 @@ For example:
 Number of agents: 2
 Size of each action: 2
 There are 2 agents. Each observes a state with length: 24
-The state for the first agent looks like: [ 0.          0.          0.          0.          0.          0.          0.
+The state for the first agent looks like: [ 0.          0.          0.          0.          0.          0.         0.
   0.          0.          0.          0.          0.          0.          0.
   0.          0.         -6.65278625 -1.5        -0.          0.
   6.83172083  6.         -0.          0.        ]
@@ -28,8 +28,8 @@ rewards shape: (2,)
 
 The task is episodic, and in order to solve the environment, the agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). 
 
-After each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 2 (potentially different) scores. We then take the maximum of these 2 scores. This yields a single score for each episode.
-The environment is considered solved, when the average (over 100 episodes) of those scores is at least +0.5.
+After each episode, the rewards that each agent received for each step are added(without discounting), to get a score for each agent. This yields 2 scores. The maximum of these 2 scores is then the episode score.
+The environment is considered solved, when the average of 100 episode scores is at least +0.5.
 
 ## Instructions
 
@@ -43,11 +43,13 @@ The environment can be downloaded from the following links depending on the OS:
 
 (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux_NoVis.zip) to obtain the "headless" version of the environment.
 
+After downloading, please place the contents of the zip file in your workspace directory.
+
 ## The Algorithm
 
 Please use the Tennis.ipynb file to explore the code and Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform.
 
-Please see the report.md file for a compelte description of the algorithm, the network architecture, the steps taken to reach the final results, the interpretation of the results and how I decided the most stable weights.
+Please see the report.md file for a compelte description of the algorithm, the network architecture, the steps taken to reach the final results, the interpretation of the results and how I decided the most stable weights. The report.md file concludes with ideas for future work on this environment.
 
 The plot of the final results showing #Episodes vs Average score over last hundred episodes is as follows:
 
