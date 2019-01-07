@@ -49,7 +49,17 @@ After downloading, please place the contents of the zip file in your workspace d
 
 Please use the Tennis.ipynb file to explore the code and Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform.
 
+I have made this project as much modular as possible with the following modules:
+
+- model.py - contains the network for both Actor and Critic models.
+- ddpg.py - contains the code for an individual agent to execute its fucntions.
+- maddpg.py - code for creating a meta agent (I called it "Parent") and executing its functions.
+- buffer.py - code for adding and sampling experiences for the agents.
+- OUNoise.py - code for creating and samping noise for the agent actions.
+- workspace_utils.py - includes code for keeping the session active. (generously provided by Udacity :))
+
 Please see the report.md file for a compelte description of the algorithm, the network architecture, the steps taken to reach the final results, the interpretation of the results and how I decided the most stable weights. The report.md file concludes with ideas for future work on this environment.
+
 
 The plot of the final results showing #Episodes vs Average score over last hundred episodes is as follows:
 
