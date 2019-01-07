@@ -100,7 +100,7 @@ In the plot above, we see that the maximum average score per 100 episodes was +1
 
 ![](images/1.969.PNG)
 
-We can see in the plot that the algorithm fluctuates between approximately 1 and 1.5 from episodes 3800 to 5000. The algorithm never stayes stable at 1 or 1.5 but fluctuates in between these scores. This means that it is stable somewhere in between these scores. This can be verified from the mean scores below.
+We can see in the plot that the algorithm fluctuates between approximately 1 and 1.5 from episodes 3800 to 5000. The algorithm never stays stable at 1 or 1.5 but fluctuates in between these scores. This means that it is stable somewhere in between these scores. This can be verified from the mean scores below.
 
 Evaluation of weights corresponding to +1.595.
 
