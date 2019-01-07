@@ -33,13 +33,14 @@ I have named my Multi-Agent clas as Parent. When an instance of Parent is create
 self.madagents = [ddpg.ddpg(24, 2, 256, 128 , 64 ), ddpg.ddpg(24, 2, 256, 128, 64)]
 
 ```
-Each DDPG agent has two actor models(local and target) and two critic models(local and target). During an episode, the environment generates two states(one for each agent). These states are fed to the parent agent to generate respective actions of each DDPG agent.
-If there are enough experiences in the buffer memory(more than the batch size) then the parent agent samples batch size memories for each agent, so that it can learn and update its actor and critic local networks.
+Each DDPG agent has two actor models (local and target) and two critic models (local and target). During an episode, the environment generates two states (one for each agent). These states are fed to the parent agent to generate respective actions of each DDPG agent.
+If there are enough experiences in the buffer memory (more than the batch size) then the parent agent samples batch size memories for each agent, so that it can learn and update its actor and critic local networks.
 
 Updating the networks:
 
 
 Each DDPG agent updates its local actor and critic networks during every update step of the parent agent. The update algorithm for a DDPG agent, say agent_0, is as folows:
+
 - Computing the Advantage function:
   - The sampled next_states of both agents are fed to their current version of actor_target models to generate next_actions after
     next_states.
@@ -49,16 +50,16 @@ Each DDPG agent updates its local actor and critic networks during every update 
     Hence Q_next acts like the cumulative reward for next_states.
    
 - Training the critic_local model:
-  - states and actions sampled are concatenated and fed to the current version of critic_local model of agent_0 to predict Q_expected       for states.
+  - states and actions sampled from the memory are concatenated and fed to the current version of critic_local model of agent_0 to           predict Q_expected.
   
-  - The critic_local model of agent_0 is then trained such that Q_expected matches the Advantage function. The difference in their           values is computed as the mean squared error loss and the critic_local network is optimized using Adam optimizer.
+  - The critic_local model of agent_0 is then trained such that Q_expected matches the Advantage function. The dissimilarity in their       values is computed as the mean squared error loss and the critic_local network is optimized using Adam optimizer.
     
 - Training the actor_local model:
   - The sampled states for both agents are fed to their current version of the actor_local model to predict actions,say actions_pred,       for both agents.
   
   - These actions_pred are concatenated with states and fed to the current version of critic_local model of agent_0 to compute               Q_current.
   
-  - The actor_local model of agent_0 is then optimized by minimizing the value -1* Q_current, in other words by maximizing Q_current.       Again I used Adam optimizer.
+  - The actor_local model of agent_0 is then optimized by minimizing the value -1* Q_current, in other words by maximizing Q_current         using the Adam optimizer.
     
 - Soft Updating the Target Networks:
 
@@ -68,7 +69,7 @@ The same steps are followed for the second agent as well.
 
 ### Randomness
 
-The OU Noise that is usually added to actions to generate more random states wasn't exploratory enough for this environment. Hence I made the actions 100% random by modifying a uniform distribution (0,1] to (-1 ,1] and randomly sampling actions from this distribution. This helped generate random consecutive states and made the algorithm much more exploratory.
+The OU Noise that is usually used to randomize actions to generate more random states wasn't exploratory enough for this environment. Hence I made the actions 100% random by modifying a uniform distribution (0,1] to (-1 ,1] and randomly sampling actions from this distribution. This helped generate random consecutive states and made the algorithm much more exploratory.
 
 
 ### Attempts
@@ -79,13 +80,13 @@ The OU Noise that is usually added to actions to generate more random states was
 
 The environment was solved but was unstable. The maximum average score per 100 episodes was +0.543.
 
-2. In the scond attempt, I kept all parameters the same but updated the networks every time step. 
+2. In the second attempt, I kept all parameters the same but updated the networks every time step. 
 
 ![](images/second.JPG)
 
 As expected, the environment was solved with much higher score, but was also more unstable.The maximum average score per 100 episodes was +0.890.
 
-3. In the third attempt, in order to make the algorithm more stable, I decided to update the networks less often. Hence I updated the network every 2 time steps and limited the number of time steps per episode to 1000. To compensate for less often training, I increased the exploratory characteristics of the agents by selecting actions with 100% randomness for first 1500 epsiodes and 50% thereafter until 2500 episodes. The results were as follows,
+3. In the third attempt, in order to make the algorithm more stable, I decided to update the networks less often. Hence I updated the network every 2 time steps and limited the number of time steps per episode to 1000. To compensate for the less frequency of training, I increased the exploratory characteristics of the agents by selecting actions with 100% randomness for first 1500 epsiodes and 50% thereafter until 2500 episodes. The results were as follows,
 
 ![](images/third.JPG)
 
@@ -93,8 +94,7 @@ The maximum average score per 100 episodes is +1.969.
 
 ### Evaluation
 
-In order to select the most stable weights, we need to look for the score at which the algorithm was stable and stayed for a long time.
-On a side note, the average score per 100 episodes for solving this environemnt is +0.5 but the Benchmark mean score per episode is +2.5. 
+In order to select the most stable weights, we need to look for the score at which the algorithm was stable and stayed there for a long time. In order to evaluate per episode mean score, we will be using the benchmark score os +2.5 for this environment as stated on the Unity website. Instead of running the environment for 100 episodes, we can just compare the mean per episode score with +2.5.
 
 In the plot above, we see that the maximum average score per 100 episodes was +1.969. But the algorithm crashes right after achieving this score. When I assigned the weights corresponding to this score to the agents and ran 5 episodes, I got a very fluctuating mean score as seen below. The benchmark score of +2.5 was never reached.
 
