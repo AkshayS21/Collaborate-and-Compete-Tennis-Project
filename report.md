@@ -14,6 +14,18 @@ Critic Model:
 ![](images/critic_model.PNG)
 
 
+
+### Hyperparameters
+
+- Learning_rate = 0.001
+- Tau = 0.001
+- noise_start = 2, noise_decay = 0.999
+- batch_size = 128, buffer_size = 1e6
+- gamma = 1
+- OU Noise parameters
+  - mu=0, theta=0.15, sigma=0.2 
+
+
 ### Algorithm
 
 I have named my Multi-Agent clas as Parent. When an instance of Parent is created, it creates a 2-Agent DDPG agent as follows:
@@ -73,19 +85,79 @@ The environment was solved but was unstable. The maximum average score per 100 e
 
 As expected, the environment was solved with much higher score, but was also more unstable.The maximum average score per 100 episodes was +0.890.
 
-3. In the third attempt, in order to make the algorithm more stable, I decided to update the networks less often. Hence I updated the network every 2 time steps and limited the number of time steps per episode to 1000. To compensate for less often training, I increased the exploratory characteristics of the agents by selecting actions with 100% randomness for first 1500 epsiodes and 50% from thereafter until 2500 episodes. The results were as follows,
+3. In the third attempt, in order to make the algorithm more stable, I decided to update the networks less often. Hence I updated the network every 2 time steps and limited the number of time steps per episode to 1000. To compensate for less often training, I increased the exploratory characteristics of the agents by selecting actions with 100% randomness for first 1500 epsiodes and 50% thereafter until 2500 episodes. The results were as follows,
 
 ![](images/third.JPG)
 
+The maximum average score per 100 episodes is +1.969.
 
 ### Evaluation
 
+In order to select the most stable weights, we need to look for the score at which the algorithm was stable and stayed for a long time.
+On a side note, the average score per 100 episodes for solving this environemnt is +0.5 but the Benchmark mean score per episode is +2.5. 
 
- the stable model, decide why chosen , show gifs.
- 
- ### Future work
-  
-  change limited steps, try out other algos like PPO etc.
+In the plot above, we see that the maximum average score per 100 episodes was +1.969. But the algorithm crashes right after achieving this score. When I assigned the weights corresponding to this score to the agents and ran 5 episodes, I got a very fluctuating mean score as seen below. The benchmark score of +2.5 was never reached.
+
+![](images/1.969.JPG)
+
+We can see in the plot that the algorithm fluctuates between approximately 1 and 1.5 from episodes 3800 to 5000. The algorithm never stayes stable at 1 or 1.5 but fluctuates in between these scores. This means that it is stable somewhere in between these scores. This can be verified from the mean scores below.
+
+Evaluation of weights corresponding to +1.595.
+
+![](images/1.595.JPG)
+
+Evaluation of weights corresponding to +1.002.
+
+![](images/1.002.JPG)
+
+As we can see, the weight above exceed the benchmark mean scores per episode of +2.5 but they are not consistent.
+Hence in order to find the stable weights, I looked for weights corresponding to a score that is around the mean of 1 and 1.5. The closest weights were those corresponding to score of +1.218. Following was their evaluation result.
+
+![](images/1.218.JPG)
+
+The mean episode score consistently exceeded +2.5. So we can conclude that the corresponding weights are stable and can be used for the environment. Following is their performance,
+
+Stable +1.218
+
+![](gifs/1.218.gif)
+
+Less Stable +1.595
+
+![](gifs/1.595.gif)
+
+
+Less Stable +1.002
+
+![](gifs/1.002.gif)
+
+
+Unstable +1.969
+
+![](gifs/1.969.gif)
+
+The evaluation codes can be found in the file Tennis_Evaluate.ipynb.
+
+
+### Ideas for Future
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
