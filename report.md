@@ -28,8 +28,8 @@ Updating the networks:
 Each DDPG agent updates its local actor and critic networks during every update step of the parent agent. The update algorithm for a DDPG agent, say agent_0, is as folows:
 - Computing the Advantage function:
   - next_states of both agents are fed to their current version of actor_target models to generate next_actions after next_states.
-  - The next_actions are concatenated with next_states and fed to the critic_target model of agent_0 to action_value Q_next given   
-    next_states and next_actions.
+  - The next_actions are concatenated with next_states and fed to the critic_target model of agent_0 to generate action_value Q_next   
+    given next_states and next_actions.
   - The Advantage function is computed as rewards(for agent_0 for taking actions after observing states) + gamma * Q_next
     Hence Q_next acts like the cumulative reward for next_states.
    
