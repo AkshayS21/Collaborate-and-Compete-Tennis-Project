@@ -3,7 +3,7 @@
 ## Implementation of the Multi-Agent Reinforcement Learning Algorithm
 
 
-### 1.Networks
+### Networks
 
 Actor model:
 
