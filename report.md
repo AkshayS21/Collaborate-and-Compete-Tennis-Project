@@ -1,5 +1,5 @@
-Report
-Collaborate and Compete – Tennis Project
+##Report
+Collaborate and Compete â€“ Tennis Project
 Implementation of the Multi-Agent Reinforcement Learning Algorithm
 
 
