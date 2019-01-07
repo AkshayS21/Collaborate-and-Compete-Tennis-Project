@@ -55,6 +55,22 @@ Each DDPG agent updates its local actor and critic networks during every update 
 The same steps are followed for the second agent as well.
 
 
+### Attempts
+
+first - OU Noise plus randomness, unlimited steps, update every 2 steps, solved but unstable.
+
+second - added randomness, unlimited steps, update every 1 step, solved, max score 0.89 but no stable score
+
+third - randomness, 1000 steps, update every 2 steps, stable and final
+
+### Evaluate 
+ the stable model, decide why chosen , show gifs.
+ 
+ ### Future work
+  
+  change limited steps, try out other algos like PPO etc.
+
+
 
 
 
