@@ -129,7 +129,7 @@ The evaluation codes can be found in the file Tennis_Evaluate.ipynb. All weights
 
 - Combination of traning steps and update frequency - I would like to try out different combinations of the max steps per episode and     the update frequency to see if it generates a higher and stable score.
 
-- Evaluate weights against another brain of the same environment - Currently the agents' objective is to balance the ball as long as       possible. But I would like to try out the trained weights against another brain ans see how it performs.
+- Evaluate weights against another brain of the same environment - Currently the agents' objective is to balance the ball as long as       possible. But I would like to try out the trained weights against another brain and see how it performs.
 
 - I will also try to implement a MultiAgent version of the PPO algorithm and make it work.
 
