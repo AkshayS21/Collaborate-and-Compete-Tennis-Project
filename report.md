@@ -122,7 +122,7 @@ Stable +1.218
 ![](gifs/1.218.gif)
 
 Unstable +1.969
-![](gif/1.969.gif)
+![](gifs/1.969.gif)
 
 
 The evaluation codes can be found in the file Tennis_Evaluate.ipynb. All weights can be found in the weights folder.
