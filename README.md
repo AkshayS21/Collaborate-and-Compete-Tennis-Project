@@ -47,7 +47,7 @@ After downloading, please place the contents of the zip file in your workspace d
 
 ## The Algorithm
 
-Please use the Tennis.ipynb file to explore the code and Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform.
+Please use the Tennis.ipynb file to explore the code and Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform. Run ``` python train.py ``` to train new weights.
 
 I have made this project as much modular as possible with the following modules:
 
@@ -57,6 +57,7 @@ I have made this project as much modular as possible with the following modules:
 - buffer.py - code for adding and sampling experiences for the agents.
 - OUNoise.py - code for creating and samping noise for the agent actions.
 - workspace_utils.py - includes code for keeping the session active. (generously provided by Udacity :))
+- train.py - includes code to train your own weights
 
 Please see the report.md file for a complete description of the algorithm, the network architecture, the steps taken to reach the final results, the interpretation of the results and how I decided the most stable weights. The report.md file concludes with ideas for future work on this environment.
 
