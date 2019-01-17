@@ -57,7 +57,8 @@ I have made this project as much modular as possible with the following modules:
 - buffer.py - code for adding and sampling experiences for the agents.
 - OUNoise.py - code for creating and samping noise for the agent actions.
 - workspace_utils.py - includes code for keeping the session active. (generously provided by Udacity :))
-- train.py - includes code to train your own weights
+- train.py - includes code to train your own weights.
+- evaluate.py - includes code to evaluate trained weights.
 
 Please see the report.md file for a complete description of the algorithm, the network architecture, the steps taken to reach the final results, the interpretation of the results and how I decided the most stable weights. The report.md file concludes with ideas for future work on this environment.
 
