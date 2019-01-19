@@ -76,9 +76,9 @@ def cont_control(n_episodes = 1000,  print_every = 100 ):
         print('\r Episode:{} \t Average Score: {:.2f} \t Average of last 100 episodes: {:.2f}'\
               .format(i_episode, np.mean(scores), np.mean(scores_deque)), end = "")
         #print(' Episode:{} \t Average Score: {}'.format(i_episode, np.mean(scores_deque)))
-        #if i_episode % print_every == 0:
+        if i_episode % print_every == 0:
             
-            #print('\n Episode:{} \t Average Score: {:.2f}\n'.format(i_episode, np.mean(scores_deque)), end='')
+            print('\n Episode:{} \t Average Score: {:.2f}\n'.format(i_episode, np.mean(scores_deque)), end='')
             
         if np.mean(scores_deque) >=30:
             torch.save(agent.actor_local.state_dict(), 'actor_model.pth')
