@@ -2,7 +2,7 @@
 Implementation of the MultiAgent Reinforcement Learning Algorithm 
 
 
-This is the repository for the Tennis Project of Udacity's Reinforcement Learning Nanodegree Program. It is an implementation of the Multi-Agent DDPG paper by OpenAI [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf) to solve the Tennis environment provided by Udacity.
+This is the repository for the Tennis Project. It is an implementation of the Multi-Agent DDPG paper by OpenAI [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf) to solve the Tennis environment provided by Udacity.
 
 
 ## Environment
