@@ -2,7 +2,7 @@
 Implementation of the MultiAgent Reinforcement Learning Algorithm 
 
 
-This is the repository for the Tennis Project. It is an implementation of the Multi-Agent DDPG paper by OpenAI [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf) to solve the Tennis environment provided by Udacity.
+This is the repository for the Tennis Project. It is an implementation of the Multi-Agent DDPG paper by OpenAI [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf) to solve the Tennis environment which is similar to, but not identical to the Tennis environment on the Unity ML-Agents GitHub page.
 
 
 ## Environment
@@ -28,7 +28,7 @@ rewards shape: (2,)
 
 The task is episodic, and in order to solve the environment, the agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). 
 
-After each episode, the rewards that each agent received for each step are added(without discounting), to get a score for each agent. This yields 2 scores. The maximum of these 2 scores is then the episode score.
+After each episode, the rewards that each agent received for each step are added (without discounting), to get a score for each agent. This yields two scores. The maximum of these two scores is then the episode score.
 The environment is considered solved, when the average of 100 episode scores is at least +0.5.
 
 ## Instructions
@@ -56,7 +56,7 @@ I have made this project as much modular as possible with the following modules:
 - maddpg.py - code for creating a meta agent (I called it "Parent") and executing its functions.
 - buffer.py - code for adding and sampling experiences for the agents.
 - OUNoise.py - code for creating and samping noise for the agent actions.
-- workspace_utils.py - includes code for keeping the session active. (generously provided by Udacity :))
+- workspace_utils.py - includes code for keeping the session active.
 - train.py - includes code to train your own weights.
 - evaluate.py - includes code to evaluate trained weights.
 
@@ -71,7 +71,6 @@ The plot of the final results showing #Episodes vs Average score over last hundr
 
 ### Note:
 - If the jupyter notebook does not display for some reason, please copy the link to the notebook and use this website -   https://nbviewer.jupyter.org/
-- The project environment is similar to, but not identical to the Tennis environment on the Unity ML-Agents GitHub page.
 
 
 
