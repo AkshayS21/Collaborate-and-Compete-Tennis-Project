@@ -47,7 +47,7 @@ After downloading, please place the contents of the zip file in your workspace d
 
 ## The Algorithm
 
-Please use the Tennis.ipynb file to explore the code and Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform. Run ``` python train.py ``` to train new weights and run ``` python evaluate.py``` to evaluate your trained weights.
+Please use the Tennis.ipynb file to explore the environment and training steps of the algorithm. Please see Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform. Run ``` python train.py ``` to train new weights and run ``` python evaluate.py``` to evaluate your trained weights.
 
 I have made this project as much modular as possible with the following modules:
 
