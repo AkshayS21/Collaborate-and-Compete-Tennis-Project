@@ -46,8 +46,11 @@ The environment can be downloaded from the following links depending on the OS:
 After downloading, please place the contents of the zip file in your workspace directory.
 
 ## The Algorithm
-
-Please use the Tennis.ipynb file to explore the environment and training steps of the algorithm. Please see Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform. Run ``` python train.py ``` to train new weights and run ``` python evaluate.py``` to evaluate your trained weights.
+- Please read the report.md file for complete description of the algorithm including the networks, the multi-agent module (maddpg), the   individual agent module (ddpg) and the training code (marl).
+- Please use the Tennis.ipynb file to explore the environment and training steps of the algorithm. 
+- Please see Tennis_Evaluate.ipynb file to see how the different levels of solved environment weights perform.
+- 
+Run ``` python train.py ``` to train new weights and run ``` python evaluate.py``` to evaluate your trained weights.
 
 I have made this project as much modular as possible with the following modules:
 
