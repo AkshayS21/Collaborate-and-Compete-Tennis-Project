@@ -55,7 +55,7 @@ Run ``` python train.py ``` to train new weights and run ``` python evaluate.py`
 I have made this project as much modular as possible with the following modules:
 
 - model.py - contains the network for both Actor and Critic models.
-- ddpg.py - contains the code for an individual agent to execute its fucntions.
+- ddpg.py - contains the code for an individual agent to execute its functions.
 - maddpg.py - code for creating a meta agent (I called it "Parent") and executing its functions.
 - buffer.py - code for adding and sampling experiences for the agents.
 - OUNoise.py - code for creating and samping noise for the agent actions.
